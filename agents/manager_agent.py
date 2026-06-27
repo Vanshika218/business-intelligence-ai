@@ -1,39 +1,36 @@
-def generate_business_report(
-    sales,
-    inventory,
-    reviews
-):
+from services.llm_service import generate_response
 
-    report = f"""
 
-BUSINESS INTELLIGENCE REPORT
+def generate_business_report(sales, inventory, reviews):
 
-Revenue:
-₹{sales['total_revenue']}
+    prompt = f"""
+You are a Senior Business Intelligence Consultant.
 
-Best Selling Product:
-{sales['top_product']}
+Analyze the following business data and generate a professional business report.
 
-Revenue Contribution:
-{sales['revenue_share']}%
+Sales Summary:
+- Total Revenue: ₹{sales['total_revenue']}
+- Total Units Sold: {sales['total_units']}
+- Top Product: {sales['top_product']}
 
-Low Stock Products:
-{', '.join(inventory['low_stock_products'])}
+Inventory Summary:
+- Low Stock Products: {', '.join(inventory['low_stock_products'])}
 
-Customer Issues:
-{', '.join(reviews['complaints'])}
+Customer Reviews:
+- Total Reviews: {reviews['total_reviews']}
+- Positive Reviews: {reviews['positive_reviews']}
+- Negative Reviews: {reviews['negative_reviews']}
+- Positive Percentage: {reviews['positive_percentage']}%
 
-RECOMMENDATIONS
+Generate a report with the following sections:
 
-1. Increase stock for low inventory products.
+1. Executive Summary
+2. Sales Insights
+3. Inventory Insights
+4. Customer Sentiment
+5. Business Recommendations
 
-2. Promote {sales['top_product']}
-through digital marketing.
-
-3. Improve delivery operations.
-
-4. Focus on high-margin textile products.
-
+Keep it professional and concise.
 """
 
-    return report
+    return generate_response(prompt)

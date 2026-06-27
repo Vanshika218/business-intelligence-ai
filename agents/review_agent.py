@@ -5,23 +5,43 @@ def analyze_reviews(path):
 
     df = pd.read_csv(path)
 
-    complaints = []
+    positive_words = [
+        "excellent",
+        "good",
+        "great",
+        "soft",
+        "love",
+        "quality"
+    ]
+
+    negative_words = [
+        "late",
+        "bad",
+        "poor",
+        "delay",
+        "slow"
+    ]
+
+    positive = 0
+    negative = 0
 
     for review in df["Review"]:
 
         review = review.lower()
 
-        if "late" in review:
-            complaints.append(
-                "Delivery Delay"
-            )
+        if any(word in review for word in positive_words):
+            positive += 1
 
-        if "slow" in review:
-            complaints.append(
-                "Shipping Delay"
-            )
+        if any(word in review for word in negative_words):
+            negative += 1
+
+    total = len(df)
+
+    positive_percentage = round((positive / total) * 100, 2)
 
     return {
-        "total_reviews": len(df),
-        "complaints": list(set(complaints))
+        "total_reviews": total,
+        "positive_reviews": positive,
+        "negative_reviews": negative,
+        "positive_percentage": positive_percentage
     }
