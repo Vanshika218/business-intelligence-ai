@@ -92,7 +92,59 @@ streamlit run app.py
 
 ## 📷 Screenshots
 
-(Add screenshots after deployment.)
+# 📸 Application Screenshots
+
+## 🏠 Home Page
+
+![Home](screenshots/home.png)
+
+---
+
+## 📊 Business Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+---
+
+## 📋 Executive Summary
+
+![Summary](screenshots/summary.png)
+
+---
+
+## 🚨 Business Alerts
+
+![Alerts](screenshots/alerts.png)
+
+---
+
+## 📦 Inventory Status
+
+![Inventory](screenshots/inventory_status.png)
+
+---
+
+## 📈 Revenue Forecast
+
+![Forecast](screenshots/revenue_forecast.png)
+
+---
+
+## 🤖 AI Business Report
+
+![Report](screenshots/report.png)
+
+---
+
+## 📧 Email Report
+
+![Email](screenshots/email_report.png)
+
+---
+
+## 💬 AI Assistant
+
+![AI Assistant](screenshots/ai_assisstant.png)
 
 ---
 
