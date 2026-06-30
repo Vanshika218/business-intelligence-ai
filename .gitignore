@@ -4,3 +4,9 @@ __pycache__/
 .venv/
 .vscode/
 .idea/
+Business_Report.pdf
+*.csv
+.streamlit/
+*.log
+.DS_Store
+Thumbs.db

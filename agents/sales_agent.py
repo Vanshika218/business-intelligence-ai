@@ -9,24 +9,33 @@ def analyze_sales(path):
 
     total_units = df["UnitsSold"].sum()
 
+    top_product = (
+        df.groupby("Product")["Revenue"]
+        .sum()
+        .idxmax()
+    )
+
     revenue_by_product = (
         df.groupby("Product")["Revenue"]
         .sum()
-        .sort_values(ascending=False)
+        .reset_index()
     )
 
-    top_product = revenue_by_product.index[0]
-
-    top_product_revenue = revenue_by_product.iloc[0]
-
-    revenue_share = round(
-        (top_product_revenue / total_revenue) * 100,
-        2
+    revenue_trend = (
+        df.groupby("Date")["Revenue"]
+        .sum()
+        .reset_index()
     )
 
     return {
+
         "total_revenue": total_revenue,
+
         "total_units": total_units,
+
         "top_product": top_product,
-        "revenue_share": revenue_share
+
+        "revenue_by_product": revenue_by_product,
+
+        "revenue_trend": revenue_trend
     }

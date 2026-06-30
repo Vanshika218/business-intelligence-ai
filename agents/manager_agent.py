@@ -22,13 +22,19 @@ Customer Reviews:
 - Negative Reviews: {reviews['negative_reviews']}
 - Positive Percentage: {reviews['positive_percentage']}%
 
-Generate a report with the following sections:
+Generate a clean professional business report.
 
-1. Executive Summary
-2. Sales Insights
-3. Inventory Insights
-4. Customer Sentiment
-5. Business Recommendations
+Rules:
+
+- Do NOT use Markdown.
+- Do NOT use ## headings.
+- Do NOT use **bold**.
+- Do NOT use --- separators.
+- Use CAPITAL LETTER headings.
+- Leave one blank line between sections.
+- Use numbered recommendations.
+- Keep the report concise and executive-friendly.
+- Output plain text only.
 
 Keep it professional and concise.
 """
