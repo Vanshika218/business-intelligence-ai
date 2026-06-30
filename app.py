@@ -5,7 +5,7 @@ from agents.sales_agent import analyze_sales
 from agents.inventory_agent import analyze_inventory
 from agents.review_agent import analyze_reviews
 from agents.manager_agent import generate_business_report
-
+from components.footer import show_footer
 from components.sidebar import show_sidebar
 from components.metrics import show_metrics
 from components.executive_summary import show_summary
@@ -16,7 +16,11 @@ from components.comparison import show_comparison
 from components.report import show_report
 from components.email import show_email
 from components.chat import show_chat
+from PIL import Image
 
+logo = Image.open("assets/logo.png")
+
+st.image(logo, width=120)
 
 st.set_page_config(
     page_title="AI Business Intelligence Platform",
@@ -161,3 +165,4 @@ if st.session_state.analysis_done:
         st.session_state.inventory,
         st.session_state.reviews
     )
+    show_footer()
